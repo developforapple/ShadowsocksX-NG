@@ -78,6 +78,7 @@ class PreferencesWindowController: NSWindowController
             "camellia-256-cfb",
             "bf-cfb",
             "chacha20-ietf-poly1305",
+            "xchacha20-ietf-poly1305",
             "salsa20",
             "chacha20",
             "chacha20-ietf",
@@ -202,6 +203,11 @@ class PreferencesWindowController: NSWindowController
             passwordTabView.selectTabViewItem(withIdentifier: "secure")
             togglePasswordVisibleButton.image = NSImage(named: NSImage.Name(rawValue: "icons8-Blind Filled-50"))
         }
+    }
+    
+    @IBAction func openPluginHelp(_ sender: Any) {
+        let url = URL(string: "https://github.com/shadowsocks/ShadowsocksX-NG/wiki/SIP003-Plugin")
+        NSWorkspace.shared.open(url!)
     }
     
     @IBAction func copyCurrentProfileURL2Pasteboard(_ sender: NSButton) {
